@@ -1,24 +1,17 @@
 {
-  "name": "spa-github-pages",
-  "version": "5.0.0",
-  "private": true,
-  "description": "Single Page Apps for GitHub Pages",
+  "name": "realhub-react-test",
+  "version": "1.0",
+  "description": "React Test for RealHub",
+  "author": "Pedro Gomes",
   "scripts": {
     "start": "webpack-dev-server --devtool eval-source-map --history-api-fallback --open",
     "build": "webpack -p"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rafrex/spa-github-pages.git"
-  },
-  "author": "Rafael Pedicini <code@rafrex.com>",
-  "license": "MIT",
   "dependencies": {
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-interactive": "^0.6.5",
-    "react-router-dom": "^4.1.1"
+    "styled-components": "^2.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
