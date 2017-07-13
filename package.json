@@ -1,11 +1,13 @@
 {
   "name": "realhub-react-test",
-  "version": "1.0",
-  "description": "React Test for RealHub",
   "author": "Pedro Gomes",
   "scripts": {
     "start": "webpack-dev-server --devtool eval-source-map --history-api-fallback --open",
     "build": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gomesphoto/realhub-react-test.git"
   },
   "dependencies": {
     "prop-types": "^15.5.8",
