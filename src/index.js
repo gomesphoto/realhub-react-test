@@ -8,6 +8,6 @@ import App from './App';
 injectGlobal`${globalStyles}`;
 
 ReactDOM.render(
-  App,
+  <App />,
   document.getElementById('root'),
 );
