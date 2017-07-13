@@ -1,9 +1,10 @@
 export const colors = {
-  white: '#FFFFFF',
-  black: '#000000',
+  white: '#fff',
+  black: '#000',
   blue: '#02b7e2',
-  darkGrey: '#404041',
-  lightGrey: '#8c8c8e',
+  orange: '#ebac57',
+  dark: '#404041',
+  light: '#8c8c8e',
   lineColour: '#d8d9d9'
 };
 
@@ -25,20 +26,19 @@ export const transitions = {
 };
 
 export const globalStyles = `
-  @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+  @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
-  html, body, #root, #router-root {
-    height: 100%;
+  html, body {
     width: 100%;
     margin: 0;
     padding: 0;
   }
 
   body {
-    font-family: Roboto, sans-serif;
+    font-family: Lato, sans-serif;
     font-weight: 300;
     font-size: ${fonts.medium};
-    color: ${colors.black};
+    color: ${colors.dark};
     position: relative;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-font-smoothing: antialiased;
@@ -47,10 +47,6 @@ export const globalStyles = `
 
   * {
     box-sizing: border-box !important;
-  }
-
-  div {
-    width: 100%;
   }
 
   a {
