@@ -25,10 +25,3 @@ Using React.js and ES6 build the ArtworkComments component. Please review the sc
 * Dark Grey - #404041
 * Light Grey - #8c8c8e
 * Line Colour - #d8d9d9
-
-#TEST LOG
-
-1499977489826 - Project Started
-1499977740252 - Created gh-pages with SPA boilerplate
-1499978187250 - Setup Dev Environment
-1499978532333 - Remove all unnecessary components and dependencies
