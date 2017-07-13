@@ -3,6 +3,7 @@ export const colors = {
   black: '#000',
   blue: '#02b7e2',
   orange: '#ebac57',
+  green: '#3bb268',
   dark: '#404041',
   light: '#8c8c8e',
   lineColour: '#d8d9d9'
@@ -36,7 +37,7 @@ export const globalStyles = `
 
   body {
     font-family: Lato, sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: ${fonts.medium};
     color: ${colors.dark};
     position: relative;

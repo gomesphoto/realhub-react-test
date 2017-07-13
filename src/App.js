@@ -29,18 +29,25 @@ const getAcknowledgedComments = comments => {
 
 class App extends Component {
   state = {
-    acknowledgedComments: getAcknowledgedComments(Comments),
+    acknowledged: getAcknowledgedComments(Comments),
     toggle: false
   }
-  toggleMenu = () => {
-    console.log(this.state.toggle);
+
+  updateAcknowledged = () =>
+    this.setState({ acknowledged: this.state.acknowledged - 1 })
+
+  toggleMenu = () =>
     this.setState({ toggle: !this.state.toggle });
-  }
+
   render = () => (
     <StyledWrapper>
       <StyledMenu>
-        <Notifications active={!!this.state.acknowledgedComments} onClick={this.toggleMenu} />
-        <Menu active={this.state.toggle} comments={Comments}/>
+        <Notifications active={!!this.state.acknowledged} onClick={this.toggleMenu} />
+        <Menu
+          active={this.state.toggle}
+          comments={Comments}
+          updateAcknowledged={this.updateAcknowledged}
+        />
       </StyledMenu>
     </StyledWrapper>
   );

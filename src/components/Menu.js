@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
+import Comment from './Comment';
 import styled from 'styled-components';
 import { colors } from '../styles';
 
@@ -20,81 +20,33 @@ const StyledMenu = styled.div`
   overflow-x: hidden;
 `;
 
-const StyledLeft = styled.div`
-  width: 15%;
+const StyledButton = styled.div`
+  background: ${colors.green};
+  border: 1px solid ${colors.lineColour};
+  padding: 8px;
+  text-align: center;
+  margin: 15px;
+  border-radius: 5px;
+  color: ${colors.white};
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
-const StyledRight = styled.div`
-  padding-left: 10px;
-  width: 80%;
-`
-
-const StyledProfileImg = styled.img`
-  width: 90%;
-  border-radius: 50%;
-`;
-
-const StyledName = styled.div`
-  color: ${colors.blue};
-`;
-
-const StyledBody = styled.div`
-  color: ${colors.dark};
-  margin: 5px 0;
-`;
-
-const StyledTimestamp = styled.span`
-  color: ${colors.light};
-`;
-
-const StyledMarkSeen = styled.span`
-  color: ${colors.orange};
-`
-
-const StyledComment = styled.div`
-  border-bottom: 1px dashed ${colors.lineColour};
-  height: 100px;
-  margin: 10px;
-  display: flex;
-`
-
-const parseDate = date => {
-  const values = date.split(/[\s/:]/g);
-  return new Date(values[2], values[1], values[0], values[3], values[4]);
-}
-
-const renderComments = comments =>
-  comments.map(comment => (
-    <StyledComment key={comment.id}>
-      <StyledLeft>
-        <StyledProfileImg src={comment.user.image.thumb_url} />
-      </StyledLeft>
-      <StyledRight>
-        <StyledName>{`${comment.user.first_name} ${comment.user.last_name}`}</StyledName>
-        <StyledBody>{comment.body}</StyledBody>
-        <StyledTimestamp>
-          {moment(parseDate(comment.dates.created.date_time)).fromNow()}
-        </StyledTimestamp>
-        {comment.acknowledged &&
-          <span>
-            {' | '}
-            <StyledMarkSeen>{'Mark as seen'}</StyledMarkSeen>
-          </span>
-        }
-      </StyledRight>
-    </StyledComment>
-  ))
-
-const Menu = ({ active, comments, ...props }) => (
-  <StyledMenu active={active} {...props}>
-    {renderComments(comments)}
+const Menu = ({ active, comments, updateAcknowledged, ...otherProps }) => (
+  <StyledMenu active={active} {...otherProps}>
+    {comments.map(comment => (
+      <Comment comment={comment} updateAcknowledged={updateAcknowledged} />
+    ))}
+    <StyledButton>{'Mark as Approved'}</StyledButton>
   </StyledMenu>
 
 )
 
 Menu.propTypes = {
   active: PropTypes.bool.isRequired,
-  comments: PropTypes.array.isRequired
+  comments: PropTypes.array.isRequired,
+  updateAcknowledged: PropTypes.func.isRequired
 }
 
 export default Menu;

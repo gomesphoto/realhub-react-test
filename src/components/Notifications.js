@@ -21,8 +21,8 @@ const StyledNotifcations = styled.div`
   }
 `;
 
-const Notifications = ({ active, ...props }) =>
-  <StyledNotifcations active={active} {...props} />
+const Notifications = ({ active, ...otherProps }) =>
+  <StyledNotifcations active={active} {...otherProps} />
 
 Notifications.propTypes = {
   active: PropTypes.bool.isRequired
