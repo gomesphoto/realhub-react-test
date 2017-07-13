@@ -42,7 +42,7 @@ class App extends Component {
   render = () => (
     <StyledWrapper>
       <StyledMenu>
-        <Notifications active={!!this.state.acknowledged} onClick={this.toggleMenu} />
+        <Notifications acknowledged={this.state.acknowledged} onClick={this.toggleMenu} />
         <Menu
           active={this.state.toggle}
           comments={Comments}
